@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+SCRIPTDIR="$(dirname $0)"
+
+cd "$SCRIPTDIR/.."
+
+if [ -z $(command -v wp) ]; then
+    cd /usr/local/bin # will require root permissions
+    curl --silent -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    mv wp-cli.phar wp
+    chmod +x wp
+fi

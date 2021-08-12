@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -e
+
+SCRIPTDIR="$(dirname $0)"
+
+cd "$SCRIPTDIR/.."
+
+script/bootstrap
+
+cd /var/www/html
+
+echo 'Creating WordPress site...'
+
+wp config set --type="constant" --raw WP_DEBUG true
+
+wp core install --url="http://$WORDPRESS_DOMAIN:$WORDPRESS_PORT" --title="$WORDPRESS_SITENAME" --admin_user="$WORDPRESS_ADMIN_USERNAME" --admin_password="$WORDPRESS_ADMIN_PASSWORD" --admin_email="$WORDPRESS_ADMIN_EMAIL" --skip-email
+
+# wp theme activate peepl-wordpress
+
+wp rewrite structure '/%year%/%monthnum%/%postname%/' --hard
+
+wp plugin install --activate blocks-css
+wp plugin install --activate check-email
+wp plugin install --activate crop-thumbnails
+wp plugin install --activate duplicate-post
+wp plugin install --activate enable-media-replace
+wp plugin install --activate heroic-table-of-contents
+wp plugin install --activate postpage-specific-custom-css
+wp plugin install --activate redirection
+wp plugin install --activate regenerate-thumbnails
+wp plugin install --activate svg-support
