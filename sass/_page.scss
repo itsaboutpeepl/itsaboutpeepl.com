@@ -1,3 +1,8 @@
+.hero {
+    background: #F5F5F5;
+    padding: 64px 0;
+}
+
 .page-template-layout-no-page-title {
     .entry-header {
         display: none;
@@ -41,7 +46,12 @@
     }
 
     @media (min-width: $screen-lg-min) {
-        padding: calc(2 * var(--global--spacing-vertical)) 0 !important;
+        padding: calc(2.5 * var(--global--spacing-vertical)) 0 !important;
+    }
+}
+.wp-block-columns > .wp-block-column {
+    @media (min-width: $screen-md-min) {
+        margin-top: calc(1.5 * var(--global--spacing-vertical)) !important;
     }
 }
 
@@ -49,3 +59,163 @@
 .entry-footer {
     display: none;
 }
+
+.blocks-gallery-item img {
+    border-radius: 8px;
+}
+
+@media (max-width: $screen-md-min) {
+    .wp-block-cb-carousel.cb-padding .slick-slide {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.wp-block-cb-carousel .slick-next:before, .wp-block-cb-carousel .slick-prev:before {
+    color: var(--global--color-white-dark-grey);
+}
+
+.slick-dots {
+    bottom: -48px;
+}
+@media (max-width: 652px) {
+    .slick-dots {
+        bottom: -28px;
+    }
+}
+
+.slick-dots li button:before {
+    font-size: 16px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: var(--global--color-white-dark-grey);
+}
+
+@media (max-width: $screen-md-min) {
+    .slick-next {
+        right: -12px;
+        width: 24px !important;
+        height: 24px !important;
+    }
+    .slick-prev {
+        left: -12px;
+        width: 24px !important;
+        height: 24px !important;
+    }
+}
+
+.slick-next, .slick-prev {
+    width: 42px;
+    height: 42px;
+    z-index: 2;
+}
+
+@media (max-width: $screen-md-min) {
+    .slick-next:before, .slick-prev:before {
+        font-size: 24px !important;
+    }
+}
+.slick-next:before, .slick-prev:before {
+    font-size: 42px;
+}
+
+.slick-next.slick-disabled:before, .slick-prev.slick-disabled:before {
+    opacity: 0.35;
+}
+
+.has-background .site .button:not(:hover):not(:active):not(.has-background), .has-background button:not(:hover):not(:active):not(.has-background), .has-background input[type=submit]:not(:hover):not(:active):not(.has-background), .has-background input[type=reset]:not(:hover):not(:active):not(.has-background), .has-background .wp-block-search .wp-block-search__button:not(:hover):not(:active):not(.has-background), .has-background .wp-block-button .wp-block-button__link:not(:hover):not(:active):not(.has-background), .has-background .wp-block-file a.wp-block-file__button:not(:hover):not(:active):not(.has-background) {
+    background: transparent !important;
+}
+
+
+// Network page Font Awesome icons
+
+#group {
+    color: var(--global--color-white);
+}
+
+#partner {
+    color: var(--global--color-white);
+}
+
+#grow {
+    color: var(--global--color-white);
+}
+
+#smile {
+    color: var(--global--color-white);
+}
+
+#social {
+    color: var(--global--color-white);
+}
+
+#mobile {
+    color: var(--global--color-white);
+}
+
+#customer {
+    color: var(--global--color-white);
+}
+
+@media (max-width: 1200px) { #social, #mobile { 
+    top: -140px
+    }
+}
+@media (min-width: 1200px) { #social, #mobile { 
+    top: -140px
+    }
+}
+@media (max-width: 1024px) { 
+    #social {
+        font-size: 284px !important;
+        top: -16px !important;
+    }
+    #mobile { 
+       top: -16px !important;
+    }
+    #smile {
+        top: -64px !important;
+    }
+    #customer {
+        font-size: 320px !important;
+        top: -24px !important;
+    }
+}
+@media (max-width: 482px) {
+    #arrow {
+        display: none;
+    }
+}
+@media (max-width: 852px) { 
+    #arrow {
+        font-size: 48px !important;
+    }
+
+    #social {
+        font-size: 240px !important;
+        top: 64px !important;
+    }
+    #mobile { 
+        font-size: 360px !important;
+        top: 48px !important;
+    }
+    #smile {
+        font-size: 240px !important;
+        top: 24px !important;
+    }
+    #customer {
+        font-size: 240px !important;
+        top: 48px !important;
+    }
+}
+@media (max-width: 1200px) { #customer, #smile { 
+    top: -140px
+    }
+}
+@media (min-width: 1200px) { #customer { 
+    top: -140px
+    }
+}
+

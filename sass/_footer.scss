@@ -1,16 +1,139 @@
 .site-footer {
-    .site-logo .custom-logo {
-        max-width: var(--branding--logo--max-width-mobile) !important;
-        max-height: var(--branding--logo--max-height-mobile) !important;
-        filter: grayscale(1);
-    }
+    background-color: #F5F5F5 !important;
+    border-radius: 12px;
+    max-width: calc(var(--responsive--alignwide-width) + 44px) !important;
+    margin-bottom: 32px;
+    padding-bottom: 0px !important;
+    transition: 800ms;
+}
+
+.site-info {
+    border: none !important;
+    width: 100%;
+    display: block;
+    margin: 8px 3px 8px 3px !important;
+    position: relative;
+    padding: 0px 16px 0px 16px !important;
+}
+
+footer .site-logo {
+    display: none;
+}
+
+.site-footer > .site-info a:hover {
+    color: var(--global--color-red) !important;
 }
 
 .footer-navigation {
     margin: 0;
-    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-navigation-wrapper {
     justify-content: flex-start;
+    font-size: 16px;
+    font-family: var(--font-base) !important;
+    font-weight: 700 !important;
+    & a {
+        color: #000000 !important;
+        padding-right: 24px;
+        transition: 250ms !important;
+        text-decoration: none !important;
+    }
+    & a:first-child {
+        padding-left: 0px;
+    }
+}
+
+@media (max-width: 568px) {
+    .footer-navigation {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    } 
+    .footer-navigation-wrapper li a {
+        font-size: 14px !important;
+        padding: 12px 16px 12px 0px !important;
+    }
+    .footer-navigation-wrapper li:first-child {
+        padding-left: 6px !important;
+    }
+    .site-footer {
+        box-shadow: none !important;
+        border-radius: 0px !important;
+        max-width: 100vw !important;
+        margin-bottom: 0px !important;
+        padding-bottom: 8px;
+    }
+    .site-footer > .site-info {
+        padding-top: 0px !important;
+    }
+    .widget-area {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+@media (max-width: 852px) { 
+    .widget_text {
+        width: 80vw !important;
+    }
+}
+
+.widget {
+    font-size: 16px !important;
+    line-height: 1.5;
+}
+
+.widget h2 {
+    color: #000000;
+    font-size: min(max(18px, 7vw), 24px) !important;
+    margin-bottom: -12px !important;
+    opacity: 0.7;
+    letter-spacing: -1px !important;
+}
+
+.widget-area {
+    padding: 0px;
+}
+
+.textwidget {
+    letter-spacing: -0.2px !important;
+}
+
+.no-widgets .site-footer {
+    margin-top: 0px !important;
+}
+
+#menu-item-3859 {
+    position: absolute;
+    right: 20px;
+    top: 4px;
+    transition: 300ms;
+    @media (max-width: 452px) {
+        display: none;
+    }
+    @media (max-width: 568px) {
+        top: 8px !important;
+    }
+    & a {
+    background: url(https://itsaboutpeepl.com/wp-content/uploads/2021/11/telegram.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    width: 40px !important;
+    height: 40px !important;
+    white-space: nowrap;
+    padding: 0px !important;
+    text-indent: -140px;
+    @media (max-width: 568px) {
+        width: 48px !important;
+        height: 48px !important;
+    }
+    @media (max-width: 652px) {
+        text-indent: -9999px !important;
+    }
+    & span {
+        position: relative;
+        top: -4px;
+    }
+    }
 }

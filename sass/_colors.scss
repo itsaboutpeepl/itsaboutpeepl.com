@@ -17,9 +17,3 @@
         background-color: var(--global--color-#{$slug});
     }
 }
-
-@each $slug, $background in $peepl-gradients {
-    .has-#{$slug}-gradient-background {
-        background: $background;
-    }
-}
