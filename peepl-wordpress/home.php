@@ -15,53 +15,57 @@
         </div>
     </div>
 
+    <?php if ( have_posts() ) : ?>
     <div class="wp-block-group alignfull">
         <div class="wp-block-group__inner-container">
-            <div class="wp-block-columns alignwide">
+            <!-- <div class="wp-block-columns alignwide">
                 <div class="wp-block-column">
                     <main class="blog-grid extrawide">
                         <article class="new-article-heading">New article</article>
                         <article class="featured-article-heading">A favourite from the archive</article>
                     </main>
+                </div>
             </div>
-    </div>
 
-    <div class="wp-block-columns alignwide">
-        <div class="wp-block-column">
-            <main class="blog-grid extrawide">
-                <article class="new-article">
-                    <h5 class="new-article-image-date">15th January 2021</h5>
-                    <h3 class="new-article-title">Web 3.0 explained</h3>
-                    <h4 class="new-article-image-author">by Zarino Zappia</h4>
-                </article>
-                <article class="featured-article">
-                    <h5 class="featured-article-image-date">29th December 2021</h5>
-                    <h3 class="featured-article-title">Enjoy the little things</h3>
-                    <h4 class="featured-article-image-author">by Leon Rossitor</h4>
-                </article>
-            </main>
+            <div class="wp-block-columns alignwide">
+                <div class="wp-block-column">
+                    <main class="blog-grid extrawide">
+                        <article class="new-article">
+                            <h5 class="new-article-image-date">15th January 2021</h5>
+                            <h3 class="new-article-title">Web 3.0 explained</h3>
+                            <h4 class="new-article-image-author">by Zarino Zappia</h4>
+                        </article>
+                        <article class="featured-article">
+                            <h5 class="featured-article-image-date">29th December 2021</h5>
+                            <h3 class="featured-article-title">Enjoy the little things</h3>
+                            <h4 class="featured-article-image-author">by Leon Rossitor</h4>
+                        </article>
+                    </main>
+                </div>
+            </div> -->
+
+            <div class="wp-block-columns alignwide">
+                <div class="wp-block-column">
+                    <?php
+                        // Start the loop.
+                        while ( have_posts() ) : the_post();
+                    ?>
+                    <main class="secondary-grid extrawide">
+                        <article class="related-article-image"></article>
+                        <article class="related-article-title">
+                            <h3><?php the_title(); ?></h3>
+                            <p class="related-article-desc"><?php echo get_the_excerpt(); ?></p>
+                        </article>
+                    </main>
+                    <?php 
+                        // End the loop.
+                        endwhile;
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="wp-block-columns alignwide">
-        <div class="wp-block-column">
-            <main class="secondary-grid extrawide">
-                <article class="related-article-image"></article>
-                <article class="related-article-title">
-                    <h3>7 Air-Cleaning Tropicals you need in your space</h3>
-                    <p class="related-article-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a href="#">Read more</a></p>
-                </article>
-            </main>
-            <main class="secondary-grid extrawide">
-                <article class="related-article-image"></article>
-                <article class="related-article-title">
-                    <h3>Why Wireframing is an Essential Skill for More Than Just Designers!</h3>
-                    <p class="related-article-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a href="#">Read more</a></p>
-                </article>
-            </main>
-        </div>
-    </div>
-    </div></div>
+    <?php endif; ?>
 
     <div class="wp-block-group is-style-default">
         <div class="wp-block-group__inner-container">
