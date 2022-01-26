@@ -15,10 +15,11 @@
         </div>
     </div>
 
-    <?php if ( have_posts() ) : ?>
     <div class="wp-block-group alignfull">
         <div class="wp-block-group__inner-container">
-            <!-- <div class="wp-block-columns alignwide">
+            <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
+            <?php if(1 == $paged) : //(if we're on page 1) ?>
+            <div class="wp-block-columns alignwide">
                 <div class="wp-block-column">
                     <main class="blog-grid extrawide">
                         <article class="new-article-heading">New article</article>
@@ -27,23 +28,54 @@
                 </div>
             </div>
 
+            
             <div class="wp-block-columns alignwide">
                 <div class="wp-block-column">
                     <main class="blog-grid extrawide">
-                        <article class="new-article">
-                            <h5 class="new-article-image-date">15th January 2021</h5>
-                            <h3 class="new-article-title">Web 3.0 explained</h3>
-                            <h4 class="new-article-image-author">by Zarino Zappia</h4>
-                        </article>
-                        <article class="featured-article">
-                            <h5 class="featured-article-image-date">29th December 2021</h5>
-                            <h3 class="featured-article-title">Enjoy the little things</h3>
-                            <h4 class="featured-article-image-author">by Leon Rossitor</h4>
-                        </article>
+                        <?php $args = array(
+                                'numberposts' => 1,
+                                'post_status' => 'publish',
+                            );
+
+                            $featured_posts = get_posts($args);
+                        ?>
+                        <?php if( ! empty( $featured_posts ) ): ?>
+                            <?php foreach ( $featured_posts as $p ) : ?>
+                                <a href="<?php echo get_permalink( $p->ID ) ?>">
+                                <article class="featured-article" style="background: url(<?php echo get_the_post_thumbnail_url($p->ID); ?>); background-position: 35% 86%; background-size: cover;">
+                                    <h5 class="new-article-image-date">15th January 2021</h5>
+                                    <h3 class="new-article-title"><?php echo get_the_title($p->ID); ?></h3>
+                                    <h4 class="new-article-image-author">by <?php echo get_the_author_meta( 'nicename', $p->post_author ); ?></h4>
+                                </article>
+                            </a>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+
+                        <?php $args = array(
+                                'numberposts' => 1,
+                                'post_status' => 'publish',
+                                'tag' => 'featured'
+                            );
+
+                            $featured_posts = get_posts($args);
+                        ?>
+                        <?php if( ! empty( $featured_posts ) ): ?>
+                            <?php foreach ( $featured_posts as $p ) : ?>
+                                <a href="<?php echo get_permalink( $p->ID ) ?>">
+                                <article class="featured-article" style="background: url(<?php echo get_the_post_thumbnail_url($p->ID); ?>); background-position: 35% 86%; background-size: cover;">
+                                    <h5 class="featured-article-image-date">29th December 2021</h5>
+                                    <h3 class="featured-article-title"><?php echo get_the_title($p->ID); ?></h3>
+                                    <h4 class="featured-article-image-author">by <?php echo get_the_author_meta( 'nicename', $p->post_author ); ?></h4>
+                                </article>
+                                </a>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </main>
                 </div>
-            </div> -->
-
+            </div>
+            <?php endif; ?>
+            
+            <?php if ( have_posts() ) : ?>
             <div class="wp-block-columns alignwide">
                 <div class="wp-block-column">
                     <?php
@@ -51,9 +83,19 @@
                         while ( have_posts() ) : the_post();
                     ?>
                     <main class="secondary-grid extrawide">
-                        <article class="related-article-image" style="background: url(<?php echo get_the_post_thumbnail_url(); ?>); background-position: 35% 86%; background-size: cover;"></article>
+                        <?php 
+                            if(has_post_thumbnail()) :
+                        ?>
+                            <a href="<?php echo get_permalink(); ?>"><article class="related-article-image" style="background: url(<?php echo get_the_post_thumbnail_url(); ?>); background-position: 35% 86%; background-size: cover;"></article></a>
+                        <?php 
+                            else:
+                        ?>
+                           <a href="<?php echo get_permalink(); ?>"><article class="related-article-image"></article></a>
+                        <?php 
+                            endif;
+                        ?>
                         <article class="related-article-title">
-                            <h3><?php the_title(); ?></h3>
+                            <h3><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
                             <p class="related-article-desc"><?php echo get_the_excerpt(); ?></p>
                         </article>
                     </main>
@@ -63,18 +105,21 @@
                     ?>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </div>
-    <?php endif; ?>
+    
 
     <div class="wp-block-group is-style-default">
         <div class="wp-block-group__inner-container">
             <div class="wp-block-buttons alignwide is-content-justification-center">
                 <div class="wp-block-button is-style-outline">
-                    <a class="wp-block-button__link has-black-color has-text-color">Load more</a>
+                    <?php next_posts_link( 'Older posts' ); ?>
+                    <?php previous_posts_link( 'Newer posts' ); ?>
                 </div>
             </div>
-    </div></div>
+        </div>
+    </div>
 
     <div class="wp-block-group alignfull">
         <div class="wp-block-group__inner-container">
