@@ -51,7 +51,7 @@
                         while ( have_posts() ) : the_post();
                     ?>
                     <main class="secondary-grid extrawide">
-                        <article class="related-article-image"></article>
+                        <article class="related-article-image" style="background: url(<?php echo get_the_post_thumbnail_url(); ?>); background-position: 35% 86%; background-size: cover;"></article>
                         <article class="related-article-title">
                             <h3><?php the_title(); ?></h3>
                             <p class="related-article-desc"><?php echo get_the_excerpt(); ?></p>
