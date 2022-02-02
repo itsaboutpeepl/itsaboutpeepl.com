@@ -136,7 +136,7 @@
                                 <input type="hidden" name="item_meta[0]" value="">
                                 <input type="hidden" id="frm_submit_entry_4" name="frm_submit_entry_4" value="ec52c20135">
                                 <input type="hidden" name="_wp_http_referer" value="/new-blog/"><div id="frm_field_39_container" class="frm_form_field form-field form-field-style  frm_required_field frm_top_container frm_full">
-                                <label for="field_29yf4d2" id="field_29yf4d2_label" class="form-primary-label">Subscribe to our newsletter
+                                <label for="field_29yf4d2" id="field_29yf4d2_label" class="form-primary-label">Subscribe to our newsletter!
                                     <span class="frm_required" aria-hidden="true">*</span>
                                 </label>
                                 <input type="email" id="field_29yf4d2" name="item_meta[39]" value="" placeholder="Enter your email address" data-reqmsg="This field cannot be blank." aria-required="true" data-invmsg="Please enter a valid email address." aria-invalid="false">
