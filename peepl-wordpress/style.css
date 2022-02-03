@@ -263,7 +263,7 @@ p a:hover {
 }
 
 .wp-block-button:not(.is-style-outline).telegram-button a.wp-block-button__link.has-black-color.has-background {
-  padding: 25px 20px 24px 20px !important;
+  padding: 25px 89px 24px 20px !important;
   transition: 175ms !important;
   margin: auto !important;
   letter-spacing: -0.8px !important;
@@ -720,6 +720,7 @@ p a:hover {
 .hero {
   background: #F5F5F5;
   padding: 64px 0;
+  margin-bottom: -92px !important;
 }
 
 .page-template-layout-no-page-title .entry-header {
@@ -946,6 +947,9 @@ p a:hover {
   grid-template-columns: 3fr 7fr;
   margin-left: -22px;
 }
+.blog-grid a {
+  text-decoration: none !important;
+}
 
 .secondary-grid {
   color: #FFFFFF;
@@ -967,7 +971,7 @@ p a:hover {
 }
 
 .new-article-image-date, .featured-article-image-date {
-  margin-bottom: 6px !important;
+  margin-bottom: 2px !important;
 }
 
 .new-article-title, .featured-article-title {
@@ -979,7 +983,7 @@ p a:hover {
 }
 
 .new-article-title, .new-article-image-author, .new-article-image-date, .featured-article-title, .featured-article-image-date, .featured-article-image-author {
-  letter-spacing: -0.02em !important;
+  letter-spacing: -0.045em !important;
 }
 
 .new-article-heading, .featured-article-heading, .related-article {
@@ -994,6 +998,7 @@ p a:hover {
 
 .related-article-image {
   background: var(--global--color-dark-grey);
+  border: 8px solid black;
   border-radius: 16px;
   height: 240px;
 }
@@ -1007,6 +1012,9 @@ p a:hover {
   letter-spacing: -0.04em;
   line-height: 1.15;
 }
+.related-article-title h3 a {
+  text-decoration: none !important;
+}
 
 .related-article-desc {
   color: var(--global--color-dark-grey);
@@ -1019,11 +1027,12 @@ p a:hover {
 
 .featured-article {
   background-color: var(--global--color-dark-grey);
+  border: 8px solid black;
   border-radius: 24px;
   color: #FFFFFF;
   padding: 24px 20px 24px 20px;
   margin-right: 48px;
-  min-height: 420px;
+  min-height: 360px;
   width: 100%;
 }
 
