@@ -110,7 +110,7 @@
     </div>
     
 
-    <div class="wp-block-group is-style-default">
+    <div class="wp-block-group is-style-default extrawide">
         <div class="wp-block-group__inner-container">
             <div class="wp-block-buttons alignwide is-content-justification-center">
                 <div class="wp-block-button is-style-outline">
