@@ -42,7 +42,7 @@
                         <?php if( ! empty( $featured_posts ) ): ?>
                             <?php foreach ( $featured_posts as $p ) : ?>
                                 <a href="<?php echo get_permalink( $p->ID ) ?>">
-                                <article class="featured-article" style="background: url(<?php echo get_the_post_thumbnail_url($p->ID); ?>); background-position: 35% 86%; background-size: cover;">
+                                <article class="featured-article" style="background-image: linear-gradient(130deg, rgba(252, 12, 26, 0.4) 0%, rgba(43, 112, 223, 0.4) 100%), url(<?php echo get_the_post_thumbnail_url($p->ID); ?>); background-position: 35% 86%; background-size: cover;">
                                     <h5 class="new-article-image-date">15th January 2021</h5>
                                     <h3 class="new-article-title"><?php echo get_the_title($p->ID); ?></h3>
                                     <h4 class="new-article-image-author">by <?php echo get_the_author_meta( 'nicename', $p->post_author ); ?></h4>
@@ -62,7 +62,7 @@
                         <?php if( ! empty( $featured_posts ) ): ?>
                             <?php foreach ( $featured_posts as $p ) : ?>
                                 <a href="<?php echo get_permalink( $p->ID ) ?>">
-                                <article class="featured-article" style="background: url(<?php echo get_the_post_thumbnail_url($p->ID); ?>); background-position: 35% 86%; background-size: cover;">
+                                <article class="featured-article" style="background-image: linear-gradient(130deg, rgba(252, 12, 26, 0.4) 0%, rgba(43, 112, 223, 0.4) 100%), url(<?php echo get_the_post_thumbnail_url($p->ID); ?>); background-position: 35% 86%; background-size: cover;">
                                     <h5 class="featured-article-image-date">29th December 2021</h5>
                                     <h3 class="featured-article-title"><?php echo get_the_title($p->ID); ?></h3>
                                     <h4 class="featured-article-image-author">by <?php echo get_the_author_meta( 'nicename', $p->post_author ); ?></h4>
@@ -86,7 +86,7 @@
                         <?php 
                             if(has_post_thumbnail()) :
                         ?>
-                            <a href="<?php echo get_permalink(); ?>"><article class="related-article-image" style="background: url(<?php echo get_the_post_thumbnail_url(); ?>); background-position: 35% 86%; background-size: cover;"></article></a>
+                            <a href="<?php echo get_permalink(); ?>"><article class="related-article-image" style="background-image: linear-gradient(130deg, rgba(252, 12, 26, 0.3) 0%, rgba(43, 112, 223, 0.3) 100%), url(<?php echo get_the_post_thumbnail_url(); ?>); background-position: 35% 86%; background-size: cover;"></article></a>
                         <?php 
                             else:
                         ?>
@@ -110,7 +110,7 @@
     </div>
     
 
-    <div class="wp-block-group is-style-default">
+    <div class="wp-block-group is-style-default extrawide">
         <div class="wp-block-group__inner-container">
             <div class="wp-block-buttons alignwide is-content-justification-center">
                 <div class="wp-block-button is-style-outline">
