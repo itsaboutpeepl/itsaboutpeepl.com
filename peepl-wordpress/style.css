@@ -1767,3 +1767,7 @@ footer .site-logo {
   display: block;
   padding-top: 100%;
 }
+
+.entry-header {
+  margin-top: 100px !important;
+}
