@@ -14,7 +14,7 @@ services:
       WORDPRESS_DB_HOST: db
     volumes:
       - html_dir:/var/www/html
-      - ./peepl-wordpress:/var/www/html/wp-content/themes/peepl-wordpress
+      - ./resist:/var/www/html/wp-content/themes/resist
       - ./docker/custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ./docker/script:/script/
 

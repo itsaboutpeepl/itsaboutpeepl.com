@@ -1,14 +1,16 @@
 :root {
-    @each $slug, $color in $peepl-colors {
+    @each $slug, $color in $theme-colors {
         --global--color-#{$slug}: #{$color};
     }
 
-    --global--color-primary: var(--global--color-dark-gray);
-    --global--color-secondary: var(--global--color-taupe);
+    --global--color-primary: var(--global--color-black);
+    --global--color-secondary: var(--global--color-red);
     --global--color-background: var(--global--color-cream);
+
+    --form--border-color: var(--global--color-black);
 }
 
-@each $slug, $color in $peepl-colors {
+@each $slug, $color in $theme-colors {
     .has-#{$slug}-color[class] {
         color: var(--global--color-#{$slug});
     }
