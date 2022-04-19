@@ -8,4 +8,4 @@ cd "$SCRIPTDIR/.."
 
 script/update
 
-rsync --verbose --compress --update --delete --recursive --group --times --progress --omit-dir-times --no-perms "peepl-wordpress" "itsaboutpeepl.com:~/public_html/wp-content/themes"
+rsync --verbose --compress --update --delete --recursive --group --times --progress --omit-dir-times --no-perms "resist" "itsaboutpeepl.com:~/public_html/wp-content/themes"

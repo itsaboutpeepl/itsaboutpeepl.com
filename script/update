@@ -6,4 +6,4 @@ SCRIPTDIR="$(dirname $0)"
 
 cd "$SCRIPTDIR/.."
 
-sass --update --no-source-map sass:peepl-wordpress
+sass --update --no-source-map sass:resist

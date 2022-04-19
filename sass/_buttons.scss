@@ -4,54 +4,17 @@
 }
 
 .wp-block-button:not(.is-style-outline) {
-    &.telegram-button {
-        & a.wp-block-button__link.has-black-color.has-background {
-            padding: 25px 89px 24px 20px !important;
-            transition: 175ms !important;
-            margin: auto !important;
-            letter-spacing: -0.8px !important;
-        }
-        & a.wp-block-button__link.has-black-color.has-background:hover {
-            color: #000 !important;
-            background-color: #F5F5F5 !important;
-            opacity: 1 !important;
-            box-shadow: 0px 0px 0px 5px #000 !important;
-        }
-    }
-    &.telegram-button-mobile {
-        & a.wp-block-button__link.has-black-color.has-text-color.has-background {
-            font-size: 18px !important;
-            padding: 26px 86px 24px 20px !important;
-            transition: 175ms !important;
-            margin: auto !important;
-            letter-spacing: -0.8px !important;
-        }
-        & a.wp-block-button__link.has-black-color.has-text-color.has-background:hover {
-            color: #000 !important;
-            background-color: #F5F5F5 !important;
-            opacity: 1 !important;
-            box-shadow: 0px 0px 0px 5px #000 !important;
-            }
-    }
-        
-    .wp-block-button__link { 
+    .wp-block-button__link {
         border: none !important;
-        border-radius: 16px !important;
-        font-weight: 700;
-        letter-spacing: -0.4px;
-        padding: calc(.334em + 4px) calc(0.667em + 5px) !important;
         transition: box-shadow 100ms linear, transform 100ms linear;
 
         &:hover {
             background: var(--global--color-red) !important;
-            box-shadow: 0 3px rgba(0, 0, 0, 0.18);
-            mix-blend-mode: luminosity;
-            opacity: 0.9;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             transform: translate(0, -2px);
-
         }
 
-        @each $slug, $color in $peepl-colors {
+        @each $slug, $color in $theme-colors {
             &.has-#{$slug}-background-color[class]:hover {
                 background-color: var(--global--color-#{$slug}) !important;
             }
@@ -60,228 +23,20 @@
                 color: var(--global--color-#{$slug}) !important;
             }
         }
-
-        @each $slug, $background in $peepl-gradients {
-            &.has-#{$slug}-gradient-background:hover {
-                background: $background !important;
-            }
-        }
     }
 }
 
 .wp-block-button.is-style-outline {
     .wp-block-button__link {
-        font-weight: 700;
-        transition: 175ms;
-        border-radius: 6px !important;
-        border-width: 4px !important;
-        letter-spacing: -0.4px;
-        padding: calc(.334em + 4px) calc(0.667em + 5px) !important;
-        @each $slug, $color in $peepl-colors {
-           &.has-#{$slug}-color:hover {
-               background-color: var(--global--color-#{$slug}) !important;
+        @each $slug, $color in $theme-colors {
+            &.has-#{$slug}-color:hover {
+                background-color: var(--global--color-#{$slug}) !important;
                 border-color: var(--global--color-#{$slug}) !important;
             }
         }
-        &.has-white-color:hover {
-           color: var(--global--color-black) !important;
-        }
-        &.has-cream-color:hover {
-            color: var(--global--color-dark-grey) !important;
+
+        .has-white-background-color:hover {
+            color: var(--global--color-black) !important;
         }
     }
-}
-
-.wp-block-column .wp-block-buttons {
-    margin-top: auto;
-    margin-left: 0;
-}
-
-.transparent-hover a:hover {
-    color: var(--global--color-dark-grey);
-    opacity: 0.7;
-    mix-blend-mode: luminosity;
-}
-
-.has-background-white .site a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
-    background: none;
-    color: none;
-}
-
-.with_frm_style .frm_required {
-    color: var(--global--color-red) !important;
-    font-weight: var(--heading--font-weight) !important;
-    font-size: var(--global--font-size-xl) !important;
-    font-family: var(--font-headings) !important;
-    margin-left: -8px !important; 
-}
-
-.with_frm_style .frm_dropzone {
-    background: #F5F5F5 !important;
-    border: 4px solid #000000 !important;
-    border-radius: 6px !important;
-}
-
-.with_frm_style .frm_dropzone .frm_upload_icon:before, .with_frm_style .frm_dropzone .dz-remove {
-    color: #000000 !important;
-}
-
-.with_frm_style .frm_radio input[type=radio], .with_frm_style .frm_checkbox input[type=checkbox] {
-    position: relative !important;
-    top: 5px !important;
-    width: 18px !important;
-
-}
-
-.frm_form_field.form-field.form-field-style.vertical_radio {
-    margin-bottom: 0px !important;
-}
-
-.frm_style_formidable-style.with_frm_style .frm_blank_field label, .frm_style_formidable-style.with_frm_style .frm_error {
-    color: var(--global--color-red) !important;
-    font-family: var(--font-headings) !important;
-    margin-top: 4px !important;
-    transition: 400ms !important;
-}
-
-.frm_style_formidable-style.with_frm_style .frm_blank_field input[type=text], .frm_style_formidable-style.with_frm_style .frm_blank_field input[type=password], .frm_style_formidable-style.with_frm_style .frm_blank_field input[type=url], .frm_style_formidable-style.with_frm_style .frm_blank_field input[type=tel], .frm_style_formidable-style.with_frm_style .frm_blank_field input[type=number], .frm_style_formidable-style.with_frm_style .frm_blank_field input[type=email], .frm_style_formidable-style.with_frm_style .frm_blank_field textarea, .frm_style_formidable-style.with_frm_style .frm_blank_field .mce-edit-area iframe, .frm_style_formidable-style.with_frm_style .frm_blank_field select, .frm_form_fields_error_style, .frm_style_formidable-style.with_frm_style .frm_blank_field .frm-g-recaptcha iframe, .frm_style_formidable-style.with_frm_style .frm_blank_field .g-recaptcha iframe, .frm_style_formidable-style.with_frm_style .frm_blank_field .frm-card-element.StripeElement, .frm_style_formidable-style.with_frm_style .frm_blank_field .chosen-container-multi .chosen-choices, .frm_style_formidable-style.with_frm_style .frm_blank_field .chosen-container-single .chosen-single, .frm_style_formidable-style.with_frm_style .frm_form_field :invalid {
-    border-color: var(--global--color-red) !important;
-}
-
-.frm_checkbox label {
-    color: #000000 !important;
-    font-family: var(--font-base) !important;
-    font-weight: var(--heading--font-weight) !important;
-    font-size: 16px !important;
-    padding: 0 !important;
-    text-indent: 0 !important;
-}
-
-#field_b7rgy_label, #field_g5x0q_label, #field_6jblx_label {
-    display: none !important;
-    margin-bottom: 0px !important;
-    padding: 0px !important;
-}
-
-.frm_dropzone .dz-preview .dz-column {
-    color: #000000 !important;
-    font-family: var(--font-headings) !important;
-    font-weight: var(--heading--font-weight) !important;
-    padding-right: 20px;
-}
-
-.frm_dropzone .dz-preview .dz-details .dz-size strong {
-    font-weight: var(--heading--font-weight) !important;
-}
-
-.frm_dropzone .dz-preview .dz-image img {
-    border-radius: 6px;
-}
-
-.frm_dropzone .dz-message {
-    background: #F5F5F5 !important;
-    border: none !important;
-    color: #000000 !important;
-    font-family: var(--font-base) !important;
-    font-weight: var(--heading--font-weight) !important;
-    font-size: 18px !important;
-}
-
-.frm_dropzone .frm_upload_icon:before {
-    font-size: 24px !important;
-    position: relative !important;
-    top: -2px !important;
-}
-
-.frm_dropzone.frm_single_upload {
-    max-width: 100% !important;
-}
-
-.frm_dropzone .dz-message {
-    margin: 0 !important;
-}
-
-.frm_upload_text button {
-    line-height: 1.1 !important;
-}
-
-.form-field-style input {
-    color: var(--global--color-black) !important;
-    background-color: transparent !important;
-    border: 4px solid var(--global--color-black) !important;
-    border-radius: 6px !important;
-    font-size: var(--global--font-size-sm) !important;
-    font-family: var(--font-base) !important;
-    font-weight: var(--heading--font-weight) !important;
-    padding: 20px 12px !important;
-    transition: 400ms;
-    &::placeholder {
-        color: #000000 !important;
-        font-weight: var(--heading--font-weight) !important;
-        opacity: 1;
-    }
-    &:focus {
-        outline: none !important;
-        border-color: var(--global--color-blue) !important;
-        box-shadow: none !important;
-    }
-}
-
-.form-field-style textarea {
-    color: var(--global--color-black) !important;
-    background-color: transparent !important;
-    border: 4px solid var(--global--color-black) !important;
-    border-radius: 6px !important;
-    font-size: var(--global--font-size-sm) !important;
-    font-family: var(--font-base) !important;
-    font-weight: var(--heading--font-weight) !important;
-    resize: none !important;
-    padding: 6px 12px !important;
-    transition: 400ms;
-    &::placeholder {
-        color: #000000 !important;
-        font-weight: var(--heading--font-weight) !important;
-        opacity: 1;
-    }
-    &:focus {
-        outline: none !important;
-        border-color: var(--global--color-blue) !important;
-        box-shadow: none !important;
-    }
-}
-
-.form-field-style select {
-    background-color: transparent !important;
-    border: 4px solid var(--global--color-black) !important;
-    border-radius: 6px !important;
-    color: var(--global--color-black) !important;
-    font-size: var(--global--font-size-sm) !important;
-    font-family: var(--font-base) !important;
-    font-weight: var(--heading--font-weight) !important;
-    height: 48px;
-    padding-left: 10px;
-    transition: 400ms;
-    &::placeholder {
-        color: #000000 !important;
-        font-weight: var(--heading--font-weight) !important;
-        opacity: 1;
-    }
-    &:focus {
-        outline: none !important;
-        border-color: var(--global--color-blue) !important;
-        box-shadow: none !important;
-    }
-}
-
-.form-primary-label {
-    color: var(--global--color-black);
-    font-size: var(--global--font-size-xl);
-    font-family: var(--font-headings);
-    font-weight: var(--heading--font-weight);
-    letter-spacing: -1px !important;
-    line-height: 1.4 !important;
-}
-
-#field_29yf4d2_label span {
-    display: none !important;
 }

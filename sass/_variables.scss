@@ -1,50 +1,15 @@
 $color-peepl-black: #000000;
-$color-peepl-dark-grey: #28303D;
-$color-peepl-taupe: #A09F9E;
-$color-peepl-red: #FC0C1A;
-$color-peepl-orange: #FC870C;
-$color-peepl-yellow: #FCCA0C;
-$color-peepl-green: #7EBD46;
-$color-peepl-teal: #46BDB1;
-$color-peepl-blue: #2B70DF;
+$color-peepl-white: #ffffff;
+$color-peepl-red: #ff344d;
+$color-peepl-cream: #fffdf6;
+$color-peepl-clay: #edeade;
 
-$color-peepl-white: #FFFFFF;
-$color-peepl-pale-grey: #F2F2F2;
-$color-peepl-cream: #F5F2EB;
-$color-peepl-pale-red: #F7E9EA;
-$color-peepl-pale-orange: #F9EEE3;
-$color-peepl-pale-yellow: #FFF8DD;
-$color-peepl-pale-green: #EBF6E2;
-$color-peepl-pale-teal: #E7F9F7;
-$color-peepl-pale-blue: #EDF3FC;
-
-$peepl-colors: (
+$theme-colors: (
     "black": $color-peepl-black,
-    "dark-grey": $color-peepl-dark-grey,
-    "taupe": $color-peepl-taupe,
-    "red": $color-peepl-red,
-    "orange": $color-peepl-orange,
-    "yellow": $color-peepl-yellow,
-    "green": $color-peepl-green,
-    "teal": $color-peepl-teal,
-    "blue": $color-peepl-blue,
     "white": $color-peepl-white,
-    "pale-grey": $color-peepl-pale-grey,
+    "red": $color-peepl-red,
     "cream": $color-peepl-cream,
-    "pale-red": $color-peepl-pale-red,
-    "pale-orange": $color-peepl-pale-orange,
-    "pale-yellow": $color-peepl-pale-yellow,
-    "pale-green": $color-peepl-pale-green,
-    "pale-teal": $color-peepl-pale-teal,
-    "pale-blue": $color-peepl-pale-blue,
-);
-
-$peepl-gradients: (
-    "red-to-orange": linear-gradient(135deg, var(--global--color-red), var(--global--color-orange)),
-    "orange-to-yellow": linear-gradient(135deg, var(--global--color-orange), var(--global--color-yellow)),
-    "yellow-to-green": linear-gradient(135deg, var(--global--color-yellow), var(--global--color-green)),
-    "green-to-teal": linear-gradient(135deg, var(--global--color-green), var(--global--color-teal)),
-    "teal-to-blue": linear-gradient(135deg, var(--global--color-teal), var(--global--color-blue)),
+    "clay": $color-peepl-clay,
 );
 
 $screen-sm-min: 482px;
