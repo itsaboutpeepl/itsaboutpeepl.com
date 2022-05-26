@@ -34,6 +34,10 @@ add_action( 'after_setup_theme', 'resist_default_background_setup', 9 );
 function resist_editor_color_palette_setup(){
     global $theme_colors;
 
+    if ( ! $theme_colors ) {
+        return true;
+    }
+
     add_theme_support(
         'editor-color-palette',
         array(
