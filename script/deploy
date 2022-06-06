@@ -2,10 +2,43 @@
 
 set -e
 
+SCRIPT=$(basename $0)
 SCRIPTDIR="$(dirname $0)"
+
+PRODUCTION_ID="eswmbespny" # get this from Cloudways dashboard
+STAGING_ID="ytumhbudtq" # get this from Cloudways dashboard
+THEMES_DIR="~/applications/$STAGING_ID/public_html/wp-content/themes"
+
+usage()
+{
+    cat <<EOF
+Usage: $SCRIPT [--production]"
+
+optional arguments:
+  --production    deploy to production site, rather than staging
+
+Builds the "resist" theme, and uploads it to the wp-content/themes/
+directory on either the staging (by default) or production server.
+
+examples:
+  $SCRIPT
+  $SCRIPT --production
+EOF
+}
+
+while [ "$1" != "" ]; do
+    case $1 in
+        --production )          THEMES_DIR="~/applications/$PRODUCTION_ID/public_html/wp-content/themes"
+                                ;;
+        -h | --help )           usage
+                                exit
+                                ;;
+    esac
+    shift
+done
 
 cd "$SCRIPTDIR/.."
 
 script/update
 
-rsync --verbose --compress --update --delete --recursive --group --times --progress --omit-dir-times --no-perms "resist" "itsaboutpeepl.com:~/public_html/wp-content/themes"
+rsync --verbose --compress --update --delete --recursive --group --times --progress --omit-dir-times --no-perms "resist" "itsaboutpeepl.com:$THEMES_DIR"
