@@ -180,17 +180,6 @@
   max-width: none;
 }
 
-@media (min-width: 652px) {
-  .entry-content > .wp-block-group {
-    padding: calc(1.5 * var(--global--spacing-vertical)) 0 !important;
-  }
-}
-@media (min-width: 822px) {
-  .entry-content > .wp-block-group {
-    padding: calc(2 * var(--global--spacing-vertical)) 0 !important;
-  }
-}
-
 .entry-footer {
   display: none;
 }

@@ -35,16 +35,6 @@
     }
 }
 
-.entry-content > .wp-block-group {
-    @media (min-width: $screen-md-min) {
-        padding: calc(1.5 * var(--global--spacing-vertical)) 0 !important;
-    }
-
-    @media (min-width: $screen-lg-min) {
-        padding: calc(2 * var(--global--spacing-vertical)) 0 !important;
-    }
-}
-
 // Just the edit post link, which we don’t need.
 .entry-footer {
     display: none;
