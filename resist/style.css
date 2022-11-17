@@ -183,7 +183,7 @@ Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, 
   padding-bottom: 0 !important;
 }
 
-.wp-block[data-align=full] .wp-block-group.is-style-twentytwentyone-border {
+.wp-block[data-align="full"] .wp-block-group.is-style-twentytwentyone-border {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -282,6 +282,30 @@ Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, 
 .wp-block-embed.shadow-lg img,
 .wp-block-embed.shadow-lg iframe {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-visible {
+  overflow: visible !important;
+}
+
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.text-left, .text-start {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right, .text-end {
+  text-align: right !important;
 }
 
 .p0 {

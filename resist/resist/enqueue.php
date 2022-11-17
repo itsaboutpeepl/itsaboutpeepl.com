@@ -3,7 +3,7 @@
 function resist_enqueue_styles() {
     wp_enqueue_style(
         'google-fonts',
-        'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans&display=swap',
+        'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,400;0,700;1,400&display=swap',
         array(),
         null
     );
@@ -24,7 +24,7 @@ add_action( 'wp_enqueue_scripts', 'resist_enqueue_styles' );
 function resist_enqueue_admin_styles() {
     wp_enqueue_style(
         'google-fonts',
-        'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans&display=swap',
+        'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,400;0,700;1,400&display=swap',
         array(),
         null
     );

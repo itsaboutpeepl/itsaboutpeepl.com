@@ -76,6 +76,30 @@
     }
 }
 
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
+.overflow-visible {
+    overflow: visible !important;
+}
+
+.overflow-auto {
+    overflow: auto !important;
+}
+
+.text-left, .text-start {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right, .text-end {
+    text-align: right !important;
+}
+
 .p0 {
     padding: 0 !important;
 }
